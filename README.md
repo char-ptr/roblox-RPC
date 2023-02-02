@@ -18,3 +18,6 @@ this is pretty much automatic except that you need to be signed into roblox in f
 ### updater issues
 if you try to run the updater and for whatever reason chrome doesn't allow you to open always, run the chr.reg and you should now be given the prompt
 (if you're not on windows, do your own research for how to enable lol)
+
+## image
+![image](https://user-images.githubusercontent.com/44528100/216448240-e3f4024c-0048-4ea7-ac9f-778c8c5f44fd.png)
