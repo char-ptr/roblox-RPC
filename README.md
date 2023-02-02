@@ -13,4 +13,4 @@ this is pretty much automatic except that you need to be signed into roblox in f
 ## caveats
 - i use puppeteer to launch roblox, cause they use some crap to make it really diffult otherwise, and frankly, im too lazy.
 - roblox-starter is written using `DENO` not `NODE` please keep in mind if you try to run lol.
-
+- requires you to be signed into roblox in firefox. (might add additional browsers later, or if anyone makes a pull request)
