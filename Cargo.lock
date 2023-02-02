@@ -209,7 +209,8 @@ dependencies = [
 
 [[package]]
 name = "discord-sdk"
-version = "0.3.2"
+version = "0.3.3"
+source = "git+https://github.com/pozm/discord-sdk.git#287fd4d85d85b17ea6888680011fece9006e9dd3"
 dependencies = [
  "anyhow",
  "app_dirs2",

@@ -1,6 +1,6 @@
 use std::{sync::Arc, time::{SystemTime, Duration}};
 
-use discord_sdk::{user::User, Discord, activity::{ActivityBuilder, Assets, ActivityButton}};
+use discord_sdk::{user::User, Discord, activity::{ActivityBuilder, Assets, ActivityButton, Activity, ActivityArgs}};
 use tokio::{sync::RwLock, task::JoinHandle};
 use parking_lot as pl;
 
@@ -95,19 +95,20 @@ impl UserMngr {
 
                     let assets = Assets::default();
                     let assets = assets.large(game_thumbnail.clone(), Some(format!("{:.^3}",game_name)));
-
+                    // let button = ActivityButton{
+                    //     label: "aaadadadad".to_string(),
+                    //     url: format!("https://www.roblox.com/games/{}",game_place_id),
+                    // }; // their crappy serialization is not working
                     let activity = ActivityBuilder::default()
                         .details(format!("Playing {}",game_name))
                         .state(format!("By {}", game_builder))
                         .assets(
                             assets,
                         )
-                        // .set_button_1(ActivityButton{
-                        //     label: "Play".to_string(),
-                        //     url: format!("https://www.roblox.com/games/{}",game_place_id),
-                        // })
                         .start_timestamp(last_update);
+                        // .set_button_1(button);
                     {
+                        // println!("activityjsn = {}",serde_json::to_string::<ActivityArgs>(&activity.into()).unwrap());
                         match Arc::clone(&dscc).write().await.update_activity(activity).await{
                             Ok(_) => {}
                             Err(e) => {

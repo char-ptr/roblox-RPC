@@ -18,7 +18,7 @@ serde = { version = "1.0.152", features = ["derive"] }
 serde_json = "1.0.91"
 tokio = { version = "1.13.0", features = ["full"] }
 poggers = {git = "https://github.com/pozm/poggers.git"}
-discord-sdk = {version = "0.3.2", path="../contrib/discord-sdk/sdk"}
+discord-sdk = {git= "https://github.com/pozm/discord-sdk.git"}
 parking_lot = "0.12.1"
 
 [workspace]
