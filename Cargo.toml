@@ -1,0 +1,28 @@
+[package]
+name = "gp-rbx"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = true
+opt-level = "z"
+debug = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = {version = "0.11.13", features = ["json","cookies"]}
+directories = "4.0.1"
+rusqlite ={ version = "0.28.0", features = ["bundled"] }
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.91"
+tokio = { version = "1.13.0", features = ["full"] }
+poggers = {git = "https://github.com/pozm/poggers.git"}
+discord-sdk = {version = "0.3.2", path="../contrib/discord-sdk/sdk"}
+parking_lot = "0.12.1"
+
+[workspace]
+members = [
+    "roblox-offset",
+    "roblox-updater",
+]
