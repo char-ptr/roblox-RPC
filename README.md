@@ -6,7 +6,7 @@ this is pretty much automatic except that you need to be signed into roblox in f
 
 ## project structure 
 - [`/src/`](./src) : Code base for the rpc part
-- [`/roblox-offset/`](./roblox-offset) : get's the offset for current place
+- [`/roblox-offset/`](./roblox-offset) : gets the offset for current place
 - [`/roblox-starter/`](./roblox-starter) : puppeteer to start roblox
 - [`/roblox-updater/`](./roblox-updater) : automates starting and getting the offset and then writing into a file
 
