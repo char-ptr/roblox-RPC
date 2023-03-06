@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 gp-rbx = {path = ".."}
 roblox-offset = {path = "../roblox-offset"}
+poggers = {git = "https://github.com/pozm/poggers.git"}

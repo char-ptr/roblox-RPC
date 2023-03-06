@@ -1,8 +1,6 @@
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import { sleep } from "https://deno.land/x/sleep/mod.ts";
 import {ensureDir} from "https://deno.land/std@0.175.0/fs/mod.ts";
-console.log(Deno.args);
-
 let first_time = true;
 await ensureDir("./data").then(()=>{
 
@@ -22,7 +20,7 @@ await page.setCookie({
     sameSite:"None",
     secure:true,
 });
-await page.goto("https://www.roblox.com/games/3199745785/X");
+await page.goto(`https://www.roblox.com/games/${Deno.args[1]}`);
 console.log("Waiting for button");
 
 let but = await page.waitForSelector("button[data-testid='play-button']",{ timeout: 12e3 });

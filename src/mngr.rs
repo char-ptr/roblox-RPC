@@ -95,10 +95,11 @@ impl UserMngr {
 
                     let assets = Assets::default();
                     let assets = assets.large(game_thumbnail.clone(), Some(format!("{:.^3}",game_name)));
-                    // let button = ActivityButton{
-                    //     label: "aaadadadad".to_string(),
-                    //     url: format!("https://www.roblox.com/games/{}",game_place_id),
-                    // }; // their crappy serialization is not working
+                    let assets = assets.small("gh".to_string(), Some("github.com/pozm/roblox-RPC".to_string()));
+                    let button = ActivityButton{
+                        label: "Play".to_string(),
+                        url: format!("https://www.roblox.com/games/{}",game_place_id),
+                    }; // their crappy serialization is not working
                     let activity = ActivityBuilder::default()
                         .details(format!("Playing {}",game_name))
                         .state(format!("By {}", game_builder))
