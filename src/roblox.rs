@@ -83,7 +83,7 @@ pub struct MemoryBased {
     pub base_mod : usize,
 }
 impl MemoryBased {
-    pub const PLACE_ID_OFFSET : usize = include!("../place_id.txt");
+    pub const PLACE_ID_OFFSET : usize = include!("../place_id_offset.txt");
     pub fn new() -> MemoryBased {
         let proc = None;
         let attached = false;
