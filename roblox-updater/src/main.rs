@@ -1,4 +1,4 @@
-use std::{process::Command, fs::File, io::{Write, Read, stdin}};
+use std::{process::{Command, Stdio}, fs::File, io::{Write, Read, stdin}};
 
 use gp_rbx::roblox::ApiBased;
 use poggers::external::process::ExProcess;
@@ -21,6 +21,12 @@ fn main() {
     let place_id_u64 : u64 = place_id.parse().expect("unable to parse place id");
 
     let cook = ApiBased::get_cookie_ff();
+
+    // install puppeteer
+    Command::new("deno").arg("run").arg("-A").arg("--unstable").arg("https://deno.land/x/puppeteer@16.2.0/install.ts")
+        .stdout(Stdio::piped()).env("PUPPETEER_PRODUCT", "chrome").spawn()
+        .expect("unable to install pupeeteer").wait().expect("unable to install pupeteer");
+
     if let Ok(mut ch) = Command::new("deno").arg("run").arg("--allow-all").arg("./roblox-starter/start.ts").arg(cook).arg(place_id).spawn() {
         ch.wait();
         println!("waiting on roblox to open...");

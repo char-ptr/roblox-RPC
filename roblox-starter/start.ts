@@ -1,5 +1,5 @@
 import puppeteer from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
-import { sleep } from "https://deno.land/x/sleep/mod.ts";
+import { sleep } from "https://deno.land/x/sleep@v1.2.1/mod.ts";
 import {ensureDir} from "https://deno.land/std@0.175.0/fs/mod.ts";
 let first_time = true;
 await ensureDir("./data").then(()=>{

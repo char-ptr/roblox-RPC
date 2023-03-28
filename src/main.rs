@@ -1,12 +1,22 @@
+
+#![cfg_attr(
+    all(not(debug_assertions), target_os = "windows"),
+    windows_subsystem = "windows"
+)]
+
+
 use std::{sync::Arc, time::{Duration, SystemTime}};
 
 use discord_sdk::Discord;
 use gp_rbx::{roblox, mngr::UserMngr};
 use parking_lot as pl;
 
-
 #[tokio::main(worker_threads = 5)]
 async fn main() {
+
+    #[cfg(feature = "alt-discord")]
+    std::env::set_var("DISCORD_INSTANCE_ID", "1");
+
     let discord_app = discord_sdk::DiscordApp::PlainId(1067619218964611212);
     let (wheel, handlr) = discord_sdk::wheel::Wheel::new(Box::new(|err| {
         println!("{}", err);
